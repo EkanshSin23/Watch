@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  let Time = new Date().toLocaleTimeString();
+const [ctime,setTime]=useState(Time);
+  const upDateTime=()=>{
+    Time=new Date().toLocaleTimeString();
+    setTime(Time);
+  }
+setInterval(upDateTime,100);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className='box' >
+
+<h1>{ctime}</h1>
+{/* <button onClick={upDateTime}>CLICK ANYWHERE</button */}
+
+
+
+   </div>
   );
 }
 
